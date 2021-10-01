@@ -13,7 +13,7 @@
     "sap.ui": {
       "technology": "UI5",
       "icons": {
-        "icon": "",
+        "icon": "sap-icon://task",
         "favIcon": "",
         "phone": "",
         "phone@2": "",

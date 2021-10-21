@@ -1,0 +1,12 @@
+{
+    "include": ["src", "templates","test"],
+    "compilerOptions": {
+        "declaration": true,
+        "outDir": "dist",
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "resolveJsonModule": true,
+        "types": ["node", "puppeteer", "jest-environment-puppeteer", "expect-puppeteer"]
+    },
+    "extends": "../../tsconfig.json"
+}

@@ -18,6 +18,6 @@ apps.forEach((app) => {
 module.exports = {
     server: servers,
     launch: {
-        headless: true
+        headless: false
     }
 };

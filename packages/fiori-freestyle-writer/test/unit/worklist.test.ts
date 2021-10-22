@@ -2,7 +2,8 @@ import { FreestyleApp, generate, TemplateType } from '../../src';
 import { join } from 'path';
 import { removeSync } from 'fs-extra';
 import { testOutputDir, debug, getMetadata } from './common';
-import { OdataVersion, WorklistSettings } from '@sap-ux/open-ux-tools-types';
+import { OdataVersion } from '@sap-ux/odata-service-writer';
+import { WorklistSettings } from '../src/types';
 
 const TEST_NAME = 'worklistTemplate';
 
@@ -56,7 +57,10 @@ describe(`Fiori freestyle template: ${TEST_NAME}`, () => {
                     version: OdataVersion.v2,
                     metadata: getMetadata('sepmra_prod_man_v2'),
                     model: '',
-                    client: '123'
+                    client: '012',
+                    destination: {
+                        name: 'SIDCLNT012'
+                    }
                 }
             }
         },
@@ -147,7 +151,7 @@ describe(`Fiori freestyle template: ${TEST_NAME}`, () => {
                 },
                 service: {
                     path: '/catalog-admin-noauth',
-                    url: 'https://fesamples-tooling.cfapps.sap.hana.ondemand.com' ,
+                    url: 'https://fesamples-tooling.cfapps.sap.hana.ondemand.com',
                     version: OdataVersion.v4,
                     metadata: getMetadata('fe_samples_v4')
                 }

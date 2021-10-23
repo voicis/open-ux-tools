@@ -3,7 +3,7 @@ import { join } from 'path';
 import { removeSync } from 'fs-extra';
 import { testOutputDir, debug, getMetadata } from './common';
 import { OdataVersion } from '@sap-ux/odata-service-writer';
-import { WorklistSettings } from '../src/types';
+import { WorklistSettings } from '../../src/types';
 
 const TEST_NAME = 'worklistTemplate';
 

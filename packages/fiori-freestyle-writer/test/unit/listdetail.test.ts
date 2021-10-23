@@ -1,6 +1,6 @@
 import { FreestyleApp, generate } from '../../src';
 import { join } from 'path';
-import { ListDetailSettings, TemplateType } from '../src/types';
+import { ListDetailSettings, TemplateType } from '../../src/types';
 import { removeSync } from 'fs-extra';
 import { commonConfig, northwind, debug, testOutputDir } from './common';
 

@@ -1,7 +1,7 @@
 import type { App, Package, UI5, UI5Framework } from '../types';
 import versionToManifestDescMapping from './version-to-descriptor-mapping.json'; // from https://github.com/SAP/ui5-manifest/blob/master/mapping.json
 import { getUI5Libs } from './ui5Libs';
-import semVer from 'semver';
+import semVer, { SemVer } from 'semver';
 import { t } from '../i18n';
 import { mergeObjects } from 'json-merger';
 
@@ -114,7 +114,7 @@ export function mergeUi5(ui5: Partial<UI5>): UI5 {
 
     merged.descriptorVersion = getManifestVersion(merged.minUI5Version, ui5.descriptorVersion);
     merged.typesVersion = ui5.typesVersion ?? typesVersion;
-    merged.ui5Theme = ui5.ui5Theme ?? 'sap_fiori_3';
+    merged.ui5Theme = ui5.ui5Theme ?? getDefaultTheme(merged.minUI5Version);
     merged.ui5Libs = getUI5Libs(ui5.ui5Libs);
 
     return Object.assign({}, ui5, merged) as UI5;
@@ -129,6 +129,20 @@ export function mergeUi5(ui5: Partial<UI5>): UI5 {
  */
 function getMinUI5Version(ui5Version: string, minUI5Version?: string) {
     return minUI5Version ?? (ui5Version ? ui5Version : UI5_DEFAULT.MIN_UI5_VERSION);
+}
+
+/**
+ * Return the default theme depending on the minimum required UI5 version.
+ *
+ * @param minUI5Version minimum required UI5 version
+ * @returns theme name
+ */
+function getDefaultTheme(minUI5Version: string): string {
+    if (!minUI5Version || semVer.gte(semVer.coerce(minUI5Version)!, '1.65.0')) {
+        return 'sap_fiori_3';
+    } else {
+        return 'sap_belize';
+    }
 }
 
 /**

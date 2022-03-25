@@ -11,7 +11,7 @@ describe('Setting defaults', () => {
         minUI5Version: UI5_DEFAULT.MIN_UI5_VERSION,
         descriptorVersion: '1.4.0',
         typesVersion: UI5_DEFAULT.DEFAULT_LOCAL_UI5_VERSION,
-        ui5Theme: 'sap_fiori_3',
+        ui5Theme: 'sap_belize',
         ui5Libs: defaultUI5Libs
     };
 
@@ -48,11 +48,14 @@ describe('Setting defaults', () => {
         // 3
         {
             input: {
-                ui5Theme: 'sap_fiori_3_dark'
+                ui5Theme: 'sap_fiori_3_dark',
+                minUI5Version: '1.65.0'
             },
             expected: {
                 ...defaultUi5,
-                ui5Theme: 'sap_fiori_3_dark'
+                ui5Theme: 'sap_fiori_3_dark',
+                minUI5Version: '1.65.0',
+                descriptorVersion: '1.14.0'
             }
         },
         // 4

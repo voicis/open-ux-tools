@@ -254,7 +254,7 @@ appDescription=Test App Description",
     \\"sap.ui5\\": {
       \\"flexEnabled\\": true,
       \\"dependencies\\": {
-        \\"minUI5Version\\": \\"1.38.0\\",
+        \\"minUI5Version\\": \\"1.38.53\\",
         \\"libs\\": {
           \\"sap.m\\": {},
           \\"sap.ui.core\\": {}
@@ -504,7 +504,7 @@ appDescription=Test App Description",
     \\"sap.ui5\\": {
       \\"flexEnabled\\": true,
       \\"dependencies\\": {
-        \\"minUI5Version\\": \\"1.38.0\\",
+        \\"minUI5Version\\": \\"1.38.53\\",
         \\"libs\\": {
           \\"sap.m\\": {},
           \\"sap.ui.core\\": {}

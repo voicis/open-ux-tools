@@ -1,7 +1,7 @@
 import { OdataVersion, TemplateType } from '../types';
 
-// https://ui5.sap.com/versionoverview.html
-export const oldestSupportedUI5Version = '1.38.0';
+// https://www.npmjs.com/package/@sap/ux-specification
+export const oldestSupportedFESpecVersion = '1.65.0';
 
 export const changesPreviewToVersion = '1.78.0';
 
@@ -116,27 +116,27 @@ export const TemplateTypeAttributes: TemplateAttributes = {
     [TemplateType.Worklist]: {
         supportedODataVersions: [OdataVersion.v2],
         minimumUi5Version: {
-            [OdataVersion.v2]: oldestSupportedUI5Version
+            [OdataVersion.v2]: oldestSupportedFESpecVersion
         }
     },
     [TemplateType.ListReportObjectPage]: {
         supportedODataVersions: [OdataVersion.v2, OdataVersion.v4],
         minimumUi5Version: {
-            [OdataVersion.v2]: oldestSupportedUI5Version,
+            [OdataVersion.v2]: oldestSupportedFESpecVersion,
             [OdataVersion.v4]: '1.84.0'
         }
     },
     [TemplateType.AnalyticalListPage]: {
         supportedODataVersions: [OdataVersion.v2, OdataVersion.v4],
         minimumUi5Version: {
-            [OdataVersion.v2]: oldestSupportedUI5Version,
+            [OdataVersion.v2]: oldestSupportedFESpecVersion,
             [OdataVersion.v4]: '1.90.0'
         }
     },
     [TemplateType.OverviewPage]: {
         supportedODataVersions: [OdataVersion.v2, OdataVersion.v4],
         minimumUi5Version: {
-            [OdataVersion.v2]: oldestSupportedUI5Version
+            [OdataVersion.v2]: oldestSupportedFESpecVersion
             //[OdataVersion.v4]: 1.97 //TBD
         }
     },

@@ -1,7 +1,7 @@
 import { OdataVersion, TemplateType } from '../types';
 
 // https://www.npmjs.com/package/@sap/ux-specification
-export const oldestSupportedFESpecVersion = '1.65.0';
+export const oldestSupportedFESpecVersion = '1.71.0';
 
 export const changesPreviewToVersion = '1.78.0';
 

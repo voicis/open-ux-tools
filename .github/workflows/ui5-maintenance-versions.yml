@@ -34,13 +34,18 @@ jobs:
               run: pnpm install
             - name: Run build
               run: pnpm --filter @sap-ux/ui5-info... build 
-            - name: Cache ui5-versions modules
+            - name: Cache UI5 maintenance versions 
               id: cache-ui5-versions
-              uses: actions/cache@v4
+              uses: actions/cache/restore@v4
               with:
                   path: tests/integration/adaptation-editor/versions.json
                   key: ui5-versions
-            - name: Load UI5 versions
+            - name: List previously cached UI5 maintenance versions
+              id: previous-ui5-versions
+              run: |
+                cat tests/integration/adaptation-editor/versions.json
+                echo "ui5_versions=$(cat tests/integration/adaptation-editor/versions.json)" >> $GITHUB_OUTPUT
+            - name: Load UI5 maintenance versions
               run: cd tests/integration/adaptation-editor && pnpm exec node version.js
             - name: Cache ui5-versions modules
               uses: actions/cache/save@v4

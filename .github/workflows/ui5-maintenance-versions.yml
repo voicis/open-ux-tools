@@ -40,11 +40,11 @@ jobs:
             #   with:
             #       path: tests/integration/adaptation-editor/versions.json
             #       key: ui5-versions
-            - name: List previously cached UI5 maintenance versions
-              id: previous-ui5-versions
-              run: |
-                cat tests/integration/adaptation-editor/versions.json
-                echo "ui5_versions=$(cat tests/integration/adaptation-editor/versions.json)" >> $GITHUB_OUTPUT
+            # - name: List previously cached UI5 maintenance versions
+            #   id: previous-ui5-versions
+            #   run: |
+            #     cat tests/integration/adaptation-editor/versions.json
+            #     echo "ui5_versions=$(cat tests/integration/adaptation-editor/versions.json)" >> $GITHUB_OUTPUT
             - name: Load UI5 maintenance versions
               run: cd tests/integration/adaptation-editor && pnpm exec node version.js
             - name: Cache ui5-versions modules

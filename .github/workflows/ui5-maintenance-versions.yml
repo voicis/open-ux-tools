@@ -49,8 +49,8 @@ jobs:
               id: current-ui5-versions
               run: |
                   cd tests/integration/adaptation-editor && pnpm exec node version.js
-                  cat tests/integration/adaptation-editor/versions.json
-                  echo "versions=$(cat tests/integration/adaptation-editor/versions.json)" >> $GITHUB_OUTPUT
+                  cat versions.json
+                  echo "versions=$(cat versions.json)" >> $GITHUB_OUTPUT
             - name: Cache ui5-versions modules
               uses: actions/cache/save@v4
               with:

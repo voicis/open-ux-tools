@@ -88,7 +88,9 @@ jobs:
                   name: blob-report-${{ matrix.ui5-version }}
                   path: tests/integration/adaptation-editor/blob-report
                   retention-days: 1
-
+            - name: Check for throttling
+              run: |
+                cat /proc/loadavg
     merge-reports:
         # Merge reports after playwright-tests, even if some shards have failed
         # TODO: do not check out and install modules for whole repo, we just need to merge reports perhaps that can be done with a dedicated action

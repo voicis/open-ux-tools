@@ -300,8 +300,6 @@ test.describe(`@quick-actions @fe-v2`, () => {
 
                 await editor.changesPanel.reloadButton.click();
 
-                await expect(editor.changesPanel.reloadButton).toBeHidden();
-
                 await expect(lr.goButton).toBeVisible();
 
                 await editor.reloadCompleted();

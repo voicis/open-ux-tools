@@ -89,6 +89,7 @@ jobs:
                   path: tests/integration/adaptation-editor/blob-report
                   retention-days: 1
             - name: Check for throttling
+              if: always()
               run: |
                 cat /proc/loadavg
     merge-reports:

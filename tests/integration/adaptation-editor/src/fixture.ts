@@ -146,7 +146,7 @@ export const test = base.extend<TestOptions, WorkerFixtures>({
         await page.goto(
             `http://localhost:${projectServer}${ADAPTATION_EDITOR_PATH}?fiori-tools-rta-mode=true#app-preview`
         );
-        if (satisfies(ui5Version, '1.84.0 - 1.130.0')) {
+        if (satisfies(ui5Version, '1.84.0 - 1.97.0')) {
             // Sync clones are created which trigger sync views warning
             await expect.soft(page.getByText('Synchronous views are')).toBeVisible({ timeout: 20_000 });
             await page.getByRole('button', { name: 'OK' }).click();
